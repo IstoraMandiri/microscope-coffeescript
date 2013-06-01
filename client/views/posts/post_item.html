@@ -1,7 +1,13 @@
 <template name="postItem">
   <div class="post">
     <div class="post-content">
-      <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span><br><p>{{message}}</p></h3>
+      <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span><br></h3>
+      <p>
+		submitted by {{author}}
+		{{#if ownPost}}
+			<a href="{{postEditPath this}}">Edit</a>
+		{{/if}}
+      </p>
     </div>
     <a href="{{postPagePath this}}" class="discuss btn">Discuss</a>
   </div>
