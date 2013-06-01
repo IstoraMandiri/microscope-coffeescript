@@ -11,7 +11,8 @@ Template.postEdit.events
 			url: $(e.target).find('[name=url]').val()
 			title: $(e.target).find('[name=title]').val()
 
-		Posts.update currentPostId {$set: postProperties}, (error) ->
+		console.log postProperties
+		Posts.update currentPostId, {$set: postProperties}, (error) ->
 			if error
 				alert error.reason
 			else
