@@ -15,7 +15,7 @@ Template.postItem.helpers
 			return 'disabled'
 
 Template.postItem.rendered = ->
-	# animate this bitch
+	# animate!
 	instance = @
 	rank = instance.data._rank
 	$this = $(@firstNode)
