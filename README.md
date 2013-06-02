@@ -7,4 +7,4 @@ Completed 3/6/13
 
 Some Sloppy Commits
 
-Metoer & CoffeeScript
+Meteor & CoffeeScript
