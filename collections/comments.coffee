@@ -25,6 +25,6 @@ Meteor.methods
 
 		comment._id = Comments.insert comment
 
-		createCommentNotifications comment
+		createCommentNotification comment
 
 		return comment._id
