@@ -1,4 +1,4 @@
-Meteor.subscribeWithPagination 'posts', 10
+@postsHandle = Meteor.subscribeWithPagination 'posts', 10
 
 Deps.autorun ->
 	Meteor.subscribe 'comments', Session.get 'currentPostId'
