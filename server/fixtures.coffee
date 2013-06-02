@@ -16,6 +16,7 @@ if Posts.find().count() is 0
     author: sacha.profile.name
     url: "http://sachagreif.com/introducing-telescope/"
     submitted: now - 7 * 3600 * 1000
+    commentsCount: 2
   )
   Comments.insert
     postId: telescopeId
@@ -37,6 +38,7 @@ if Posts.find().count() is 0
     author: tom.profile.name
     url: "http://meteor.com"
     submitted: now - 10 * 3600 * 1000
+    commentsCount: 0
 
   Posts.insert
     title: "The Meteor Book"
@@ -44,3 +46,4 @@ if Posts.find().count() is 0
     author: tom.profile.name
     url: "http://themeteorbook.com"
     submitted: now - 12 * 3600 * 1000
+    commentsCount: 0
