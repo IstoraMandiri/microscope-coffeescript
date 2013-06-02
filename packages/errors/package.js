@@ -4,8 +4,14 @@ Package.describe({
   summary: 'A pattern to display application errors to the user'
 });
 
-Package.on_use(function (api, where) {
-  api.use(['coffeescript', 'minimongo', 'mongo-livedata', 'templating'], 'client');
+Package.on_use(function(api) {
+  api.use(['minimongo', 'mongo-livedata', 'templating', 'coffeescript'], 'client');
+  return api.add_files(['errors.coffee', 'errors_list.html', 'errors_list.coffee'], 'client');
+});
 
-  api.add_files(['errors.coffee', 'errors_list.html', 'errors_list.coffee'], 'client');
+Package.on_test(function(api) {
+  console.log('testing');
+  api.use('errors', 'client');
+  api.use(['tinytest', 'test-helpers', 'coffeescript'], 'client');
+  return api.add_files('errors_tests.coffee', 'client');
 });
