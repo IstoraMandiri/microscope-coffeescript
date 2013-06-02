@@ -4,8 +4,7 @@ Meteor.publish 'newPosts', (limit) ->
 		limit:limit
 
 Meteor.publish 'singlePost', (id) ->
-	console.log id
-	Posts.find(id)
+	Posts.find id
 
 Meteor.publish 'comments', (postId) ->
 	Comments.find
