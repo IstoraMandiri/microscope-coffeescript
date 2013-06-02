@@ -11,10 +11,9 @@ Template.postEdit.events
 			url: $(e.target).find('[name=url]').val()
 			title: $(e.target).find('[name=title]').val()
 
-		console.log postProperties
 		Posts.update currentPostId, {$set: postProperties}, (error) ->
 			if error
-				alert error.reason
+				Meteor.Errors.throw error.reason
 			else
 				Meteor.Router.to 'postPage', currentPostId
 
