@@ -28,10 +28,13 @@ Template.postItem.rendered = ->
 		# calculate difference between old position and new position and send element there
 		delta = previousPosition - newPosition
 		$this.css 'top', "#{delta}px"
+	else
+		# it's the first render, so hide it
+		$this.addClass 'invisible'
 
 	Meteor.defer ->
 		instance.currentPosition = newPosition
-		$this.css 'top', '0px'
+		$this.css('top', '0px').removeClass 'invisible'
 
 
 Template.postItem.events
