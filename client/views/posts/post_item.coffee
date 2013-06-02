@@ -14,6 +14,26 @@ Template.postItem.helpers
 		else
 			return 'disabled'
 
+Template.postItem.rendered = ->
+	# animate this bitch
+	instance = @
+	rank = instance.data._rank
+	$this = $(@firstNode)
+	postHeight = 80
+	newPosition = rank * postHeight
+	
+	# if element has a currentPosition (i.e. it's not the first ever render) 
+	if instance.currentPosition?
+		previousPosition = instance.currentPosition
+		# calculate difference between old position and new position and send element there
+		delta = previousPosition - newPosition
+		$this.css 'top', "#{delta}px"
+
+	Meteor.defer ->
+		instance.currentPosition = newPosition
+		$this.css 'top', '0px'
+
+
 Template.postItem.events
 	'click .upvote': (e) ->
 		e.preventDefault()
