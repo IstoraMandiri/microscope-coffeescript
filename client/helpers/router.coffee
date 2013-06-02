@@ -19,6 +19,12 @@ Meteor.Router.filters
 		else 
 			return 'accessDenied'
 
+	'clearErrors': (page) ->
+		clearErrors()
+		return page
+
 
 Meteor.Router.filter 'requireLogin',
 	only: 'postSubmit'
+
+Meteor.Router.filter 'clearErrors'

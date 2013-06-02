@@ -13,10 +13,7 @@ Template.postSubmit.events
 				throwError error.reason
 
 				if error.error is 302
-					console.log '302 error', error.details
 					Meteor.Router.to 'postPage', error.details
 
 			else
 				Meteor.Router.to 'postPage', id
-			
-		Meteor.Router.to 'postsList'		

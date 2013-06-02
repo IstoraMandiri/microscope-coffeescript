@@ -1,4 +1,10 @@
 Template.errors.helpers
 	errors: ->
-		console.log 'Found ',Errors.find().count(),'errors.'
-		return Errors.find()
+		Errors.find()
+
+Template.error.rendered = ->
+	error = @data
+	Meteor.defer ->
+		Errors.update error._id, 
+			$set: 
+				seen:true
